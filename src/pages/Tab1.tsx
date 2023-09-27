@@ -27,6 +27,7 @@ export default Tab1;
  */
 import React from 'react';
 import { IonButtons, IonContent, IonHeader, IonListHeader, IonLabel, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar, IonApp, IonMenuToggle, IonList, IonItem, IonIcon, IonButton } from '@ionic/react';
+import { home, information, newspaperOutline } from 'ionicons/icons';
 const Tab1: React.FC = () => {
   return (
     <>
@@ -41,9 +42,21 @@ const Tab1: React.FC = () => {
     <IonList>
       <IonListHeader>Navigate from here</IonListHeader>
         <IonMenuToggle auto-hide="false">
-          <IonItem button>
-            <IonIcon slot="icon-only" name='home'></IonIcon>
+          <IonItem button routerLink="/tab1">
+            <IonIcon icon={home}></IonIcon>
               <IonLabel>Home</IonLabel>
+          </IonItem>
+        </IonMenuToggle>
+        <IonMenuToggle auto-hide="false">
+          <IonItem button routerLink="/tab2">
+            <IonIcon icon={newspaperOutline}></IonIcon>
+              <IonLabel>Contacts</IonLabel>
+          </IonItem>
+        </IonMenuToggle>
+        <IonMenuToggle auto-hide="false">
+          <IonItem button routerLink="/tab3">
+            <IonIcon icon={information}></IonIcon>
+              <IonLabel>About</IonLabel>
           </IonItem>
         </IonMenuToggle>
     </IonList>
@@ -53,11 +66,7 @@ const Tab1: React.FC = () => {
   <IonHeader>
     <IonToolbar>
       <IonButtons slot="start">
-        <IonMenuToggle>
-          <IonButton>
-            <IonIcon slot="icon-only" name="home"></IonIcon>
-          </IonButton>
-        </IonMenuToggle>
+        <IonMenuButton></IonMenuButton>
       </IonButtons>
         <IonTitle>Header</IonTitle>
     </IonToolbar>
